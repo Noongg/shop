@@ -44,18 +44,18 @@ class Register extends StatelessWidget {
                   const SizedBox(height: 20,),
                   Form(child: Column(
                     children: [
-                      customTextFormField(name: "Full Name", icon: const Icon(Icons.person)),
+                      customTextFormField(title: "Full Name", icon: const Icon(Icons.person)),
                       const SizedBox(height: 20,),
-                      customTextFormField(name: "Your Phone", icon: const Icon(Icons.phone)),
+                      customTextFormField(title: "Your Phone", icon: const Icon(Icons.phone)),
                       const SizedBox(height: 20,),
-                      customTextFormField(name: "Address", icon: const Icon(Icons.location_on_outlined)),
+                      customTextFormField(title: "Address", icon: const Icon(Icons.location_on_outlined)),
                       const SizedBox(height: 20,),
                       customButton(text: "Sign Up", callback: (){}),
                       const SizedBox(height: 10,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          textLight(text: "have a account?", color: CustomColors.colorText, fontSize: 12),
+                          textLight(text: "Have a account?", color: CustomColors.colorText, fontSize: 12),
                           GestureDetector(
                             onTap: (){},
                             child: textBold(text: " Sign In", color: CustomColors.colorPrimary, fontSize: 14),

@@ -39,7 +39,7 @@ class HelloScreen extends StatelessWidget {
                   textLight(text: 'Sign in to continue', color: CustomColors.colorTitle, fontSize: 12),
                   const SizedBox(height: 20,),
                   Form(
-                    child: customTextFormField(name: "Your Phone", icon: const Icon(Icons.phone)),
+                    child: customTextFormField(title: "Your Phone", icon: const Icon(Icons.phone)),
                   ),
                   const SizedBox(height: 20,),
                   customButton(text: "Sign In",callback: (){
@@ -60,12 +60,6 @@ class HelloScreen extends StatelessWidget {
                   const SizedBox(height: 10,),
                   customLoginWith(text: "Login with Facebook",assetsImg: "assets/images/Facebook.svg", padding: 50, callback: (){},),
                   const SizedBox(height: 20,),
-                  GestureDetector(
-                    child:textBold(text: 'Forgot Password?', color: CustomColors.colorPrimary, fontSize: 12),
-                    onTap: (){
-
-                    },
-                  ),
                   const SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
