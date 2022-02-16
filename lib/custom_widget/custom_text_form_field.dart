@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_1/custom_colors.dart';
 
-Widget customTextFormField({required String title,required Icon icon ,String? Function(String?)? validator}){
+Widget customTextFormField({required String title,required Icon icon ,String? Function(String?)? validator, TextEditingController? controller}){
   return SizedBox(
     height: 50,
     width: Get.width,
@@ -11,6 +11,7 @@ Widget customTextFormField({required String title,required Icon icon ,String? Fu
       maxLines: 1,
       style: const TextStyle(fontSize: 18),
       validator: validator,
+      controller:controller ,
       decoration: InputDecoration(
         labelText: title,
         contentPadding: const EdgeInsets.all(0),

@@ -6,15 +6,29 @@ import 'package:get/get.dart';
 import 'package:test_1/custom_colors.dart';
 import 'package:test_1/custom_widget/custom_button.dart';
 import 'package:test_1/custom_widget/custom_text_form_field.dart';
+import 'package:test_1/hello.dart';
 
 import 'custom_widget/text_bold.dart';
 import 'custom_widget/text_light.dart';
 
 class Register extends StatelessWidget {
-  const Register({Key? key}) : super(key: key);
+  Register({Key? key}) : super(key: key);
+
+  String validateMobile(String? value) {
+    String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = new RegExp(pattern);
+    if (value!.length == 0) {
+      return 'Please enter mobile number';
+    }
+    else if (!regExp.hasMatch(value)) {
+      return 'Please enter valid mobile number';
+    }
+    return "";
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
         value: const SystemUiOverlayStyle(
             statusBarIconBrightness: Brightness.dark,
@@ -44,23 +58,25 @@ class Register extends StatelessWidget {
                   const SizedBox(height: 20,),
                   Form(child: Column(
                     children: [
-                      customTextFormField(title: "Full Name", icon: const Icon(Icons.person)),
+                      customTextFormField(title: "Full Name", icon: const Icon(Icons.person) ),
                       const SizedBox(height: 20,),
-                      customTextFormField(title: "Your Phone", icon: const Icon(Icons.phone)),
+                      customTextFormField(title: "Your Phone", icon: const Icon(Icons.phone),validator: validateMobile),
                       const SizedBox(height: 20,),
                       customTextFormField(title: "Address", icon: const Icon(Icons.location_on_outlined)),
-                      const SizedBox(height: 20,),
-                      customButton(text: "Sign Up", callback: (){}),
-                      const SizedBox(height: 10,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          textLight(text: "Have a account?", color: CustomColors.colorText, fontSize: 12),
-                          GestureDetector(
-                            onTap: (){},
-                            child: textBold(text: " Sign In", color: CustomColors.colorPrimary, fontSize: 14),
-                          )
-                        ],
+
+                    ],
+                  )),
+                  const SizedBox(height: 30,),
+                  customButton(text: "Sign Up", callback: (){}),
+                  Expanded(child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      textLight(text: "Have a account?", color: CustomColors.colorText, fontSize: 12),
+                      GestureDetector(
+                        onTap: (){
+                          Get.to(HelloScreen());
+                        },
+                        child: textBold(text: " Sign In", color: CustomColors.colorPrimary, fontSize: 14),
                       )
                     ],
                   ))

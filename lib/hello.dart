@@ -13,8 +13,7 @@ import 'package:test_1/register.dart';
 import 'package:test_1/verification.dart';
 
 class HelloScreen extends StatelessWidget {
-  const HelloScreen({Key? key}) : super(key: key);
-
+  HelloScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -61,17 +60,19 @@ class HelloScreen extends StatelessWidget {
                   customLoginWith(text: "Login with Facebook",assetsImg: "assets/images/Facebook.svg", padding: 50, callback: (){},),
                   const SizedBox(height: 20,),
                   const SizedBox(height: 10,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      textLight(text: 'Don’t have a account? ', color: CustomColors.colorTitle, fontSize: 12),
-                      GestureDetector(
-                        child: textBold(text: ' Register', color: CustomColors.colorPrimary, fontSize: 12),
-                        onTap: (){
-                          Get.to(Register());
-                        },
-                      )
-                    ],
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        textLight(text: 'Don’t have a account? ', color: CustomColors.colorTitle, fontSize: 12),
+                        GestureDetector(
+                          child: textBold(text: ' Register', color: CustomColors.colorPrimary, fontSize: 12),
+                          onTap: (){
+                            Get.to(Register());
+                          },
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
