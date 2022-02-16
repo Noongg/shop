@@ -10,9 +10,7 @@ Widget customLoginWith({required String text,required String assetsImg,required 
     style:OutlinedButton.styleFrom(
       minimumSize: Size(Get.width, 57),
     ) ,
-      onPressed: (){
-        callback;
-      },
+      onPressed: callback,
       label: Padding(padding: const EdgeInsets.only(right: 60),child: textBold(text: text, color: CustomColors.colorText, fontSize: 14),),
       icon:  Padding(padding: EdgeInsets.only(right: padding),child: SvgPicture.asset(assetsImg),),
       );

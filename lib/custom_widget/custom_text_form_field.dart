@@ -12,6 +12,7 @@ Widget customTextFormField({required String title,required Icon icon ,String? Fu
       style: const TextStyle(fontSize: 18),
       validator: validator,
       controller:controller ,
+      autofocus: false,
       decoration: InputDecoration(
         labelText: title,
         contentPadding: const EdgeInsets.all(0),
