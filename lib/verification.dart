@@ -42,16 +42,22 @@ class Verification extends StatelessWidget {
                     hintStyle: TextStyle(fontSize: 22),
 
                   ),
-                )
+                ),
+                Expanded(child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: GestureDetector(
+                    onTap: (){},
+                    child: textMedium(text: 'Resend Code', color: CustomColors.colorPrimary, fontSize: 18),
+                  ),
+                )),
+                const Padding(padding: EdgeInsets.only(bottom: 30)),
               ],
             ),
           ),
-          floatingActionButton: Row(
-            children: [
-              textMedium(text: "Resend Code", color: CustomColors.colorText, fontSize: 18),
-              FloatingActionButton(onPressed: (){})
-            ],
-          ),
+          floatingActionButton:  FloatingActionButton(
+              backgroundColor: CustomColors.colorPrimary,
+              child: const Icon(Icons.arrow_forward_ios),
+              onPressed: (){}),
         )
     );
   }
