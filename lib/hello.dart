@@ -9,7 +9,9 @@ import 'package:test_1/custom_colors.dart';
 import 'package:test_1/custom_widget/custom_text_form_field.dart';
 import 'package:test_1/custom_widget/text_bold.dart';
 import 'package:test_1/custom_widget/text_light.dart';
+import 'package:test_1/pick_image.dart';
 import 'package:test_1/register.dart';
+import 'package:test_1/search.dart';
 import 'package:test_1/slide.dart';
 import 'package:test_1/verification.dart';
 
@@ -57,10 +59,13 @@ class HelloScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20,),
                   customLoginWith(text: "Login with Google",assetsImg: "assets/images/Group 121.svg",padding: 70, callback: (){
-                    Get.to(Slide());
+                    //Get.to(Slide());
+                    Get.to(PickImage());
                   }, ),
                   const SizedBox(height: 10,),
-                  customLoginWith(text: "Login with Facebook",assetsImg: "assets/images/Facebook.svg", padding: 50, callback: (){},),
+                  customLoginWith(text: "Login with Facebook",assetsImg: "assets/images/Facebook.svg", padding: 50, callback: (){
+                    Get.to(Search());
+                  },),
                   const SizedBox(height: 20,),
                   const SizedBox(height: 10,),
                   Expanded(

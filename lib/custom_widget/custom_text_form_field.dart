@@ -9,16 +9,16 @@ Widget customTextFormField({required String title,required Icon icon ,String? Fu
     width: Get.width,
     child: TextFormField(
       maxLines: 1,
-      style: const TextStyle(fontSize: 18),
+      style: const TextStyle(fontSize: 16),
       validator: validator,
       controller:controller ,
       autofocus: false,
       decoration: InputDecoration(
-        labelText: title,
+        hintText: title,
         contentPadding: const EdgeInsets.all(0),
         border: const OutlineInputBorder(),
         enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: CustomColors.colorText, width: 0.5)),
+            borderSide: BorderSide(color: CustomColors.colorText, width: 0.3)),
         focusedBorder:  OutlineInputBorder(
             borderSide: BorderSide(color: CustomColors.colorPrimary, width: 1)),
         errorBorder: const OutlineInputBorder(
